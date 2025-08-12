@@ -1,27 +1,24 @@
 // variável do tipo array que armazenará os nomes dos amigos inseridos.
 let listaDeAmigos = [];
 
-// função para adicionar amigos
 function adicionarAmigo() {
-    // capturar o valor do campo de entrada
     let amigo = document.getElementById('amigo').value;
     
-    // validação para garantir que o campo não esteja vazio
-    if (amigo === '') {
+    // validação 
+    if (amigo === '' ) {
         alert('Por favor, insira um nome.');
+    } if (listaDeAmigos.includes(amigo)){
+        alert('Por favor, insira outro nome.');
     }
-    else {  // valor válido
+    else {
         listaDeAmigos.push(amigo);
-        console.log(listaDeAmigos)
         atualizarListaDeAmigos();
     }
 
-    // Limpar o campo de entrada após adicionar o nome
+    // Limpa o campo de entrada após adicionar o nome
     amigo = document.getElementById('amigo');
     amigo.value = '';
 }
-
-// função para atualizar a lista de amigos
 
 function atualizarListaDeAmigos() {
     
@@ -32,11 +29,23 @@ function atualizarListaDeAmigos() {
     listaAmigos.innerHTML = '';
     
     // percorre a listaDeAmigos e adiciona cada nome como um elemento <li> dentro de uma lista HTML
-    let contadorDeNomes = 0;
-    while (contadorDeNomes < listaDeAmigos.length) {
-        let item = document.createElement('li'); // cria o elemento (<li>) no html
-        item.innerHTML += `${listaDeAmigos[contadorDeNomes]}`; // adiciona ao html o item
-        listaAmigos.appendChild(item);// adiciona o elemento filho (<li>) a lista que vai ser exibida
-        contadorDeNomes++;
+    for (let contadorDeNomes = 0; contadorDeNomes < listaDeAmigos.length; contadorDeNomes++) {
+        let item = document.createElement('li');
+        item.innerHTML += `${listaDeAmigos[contadorDeNomes]}`;
+        listaAmigos.appendChild(item);
     }
+}
+
+function sortearAmigo() {
+    // validar se há amigos disponíveis
+    let listaDeAmigosSorteados = [];
+    if (listaDeAmigos.length > 0) {
+        if (listaDeAmigos.length >= 1){
+            let indiceAleatorio = Math.floor(Math.random() * listaDeAmigos.length);
+            let amigoEscolhido = listaDeAmigos[indiceAleatorio];
+            let resultado = document.getElementById('resultado');
+            resultado.innerHTML = `${amigoEscolhido}`;}
+    } else {
+            alert('Por favor, insira um nome para ser sorteado');
+        }
 }
