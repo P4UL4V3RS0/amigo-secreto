@@ -1,11 +1,11 @@
 :root {
-    --color-primary: #4B69FD;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
-    --color-text: #444444;
-    --color-white: #FFFFFF;
+    --color-primary: #FFF;
+    --color-secondary: #EC5D44;
+    --color-tertiary: #358584;
+    --color-button: #FFB347;
+    --color-button-hover: #f89e21;
+    --color-text:  #000;
+    --color-red: #EC5D44;
 }
 
 /* Estilos gerais */
@@ -17,33 +17,36 @@
 
 body {
     height: 100vh;
-    background-color: var(--color-primary);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .main-content {
-    display: flex;
-    flex-direction: column;
+    margin: 0;
     height: 100%;
     width: 100%;
 }
 
 /* Banner */
 .header-banner {
-    flex: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0 0;
+    margin: 0;
+}
+ 
+.main-apresentacao{
+    background-image: url(assets/wallpaperAmigoSecreto.png);
+    color: #FFF;
+    text-align: center;
+    padding: 55px;
 }
 
 /* Seção de entrada */
 .input-section {
     flex: 60%;
-    background-color: var(--color-secondary);
-    border: 1px solid #000;
     border-radius: 64px 64px 0 0;
     display: flex;
     flex-direction: column;
@@ -53,19 +56,31 @@ body {
 }
 
 /* Títulos */
-.main-title {
+.header-banner-title {
     font-size: 48px;
-    font-family: "Merriweather", serif;
+    font-family:"Bungee", sans-serif;
     font-weight: 900;
     font-style: italic;
-    color: var(--color-white);
+    color: var(--color-red);
+    margin: 10px;
+}
+
+.main-apresentacao-title{
+    font-size: 48px;
+    font-family:"Chicle", serif;
+    margin-bottom: 20px;
+}
+
+.main-apresentacao-subtitle {
+    font-size: 16px;
+    font-family:"Bungee", sans-serif;
 }
 
 .section-title {
-    font-family: "Inter", serif;
+    font-family: "Chicle", serif;
     font-size: 36px;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-tertiary);
     margin: 10px 0;
     text-align: center;
 }
@@ -122,7 +137,7 @@ button {
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
+    background-color: #25706f;
 }
 
 /* Listas */
@@ -136,10 +151,11 @@ ul {
 
 .result-list {
     margin-top: 15px;
-    color: #05DF05;
+    color: var(--color-text);
     font-size: 22px;
     font-weight: bold;
     text-align: center;
+    font-family: "Bungee", sans-serif;
 }
 
 /* Botão de sortear título */
@@ -148,7 +164,7 @@ ul {
     align-items: center;
     width: 100%;
     padding: 10px 40px;
-    color: var(--color-white);
+    color: var(--color-primary);
     background-color: var(--color-button);
     font-size: 16px;
 }
